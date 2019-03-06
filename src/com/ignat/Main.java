@@ -113,7 +113,16 @@ public class Main {
                         listSong(playlist);
                         break;
                     case 5: //remove current song from playlist
-                        listIterator.remove();
+                        if(playlist.size()>0) {                 //Later edit:
+                            listIterator.remove();              //added code, so it won't go
+                            if(listIterator.hasNext()) {        //in error when removing all songs from playlist
+                                listIterator.next();
+                                break;
+                            }
+                        }
+                        System.out.println("Playlist is empty. Exiting...");
+                        quit=true;
+
                         break;
                     case 6:
                         printOptions();
