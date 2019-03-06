@@ -116,7 +116,7 @@ public class Main {
                         if(playlist.size()>0) {                 //Later edit:
                             listIterator.remove();              //added code, so it won't go
                             if(listIterator.hasNext()) {        //in error when removing all songs from playlist
-                                listIterator.next();
+                                System.out.print("Deleting song ==> Now playing:   "+ listIterator.next().getTitle());
                                 break;
                             }
                         }
